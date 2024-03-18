@@ -3,9 +3,7 @@ package com.Angelo.service;
 import com.Angelo.dto.Page;
 import com.Angelo.dto.Users;
 import com.Angelo.res.RestFulBean;
-import jxl.write.WriteException;
 import org.springframework.web.multipart.MultipartFile;
-import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -50,11 +48,7 @@ public interface UsersService {
 
     RestFulBean<Map> upload(MultipartFile coverFile) throws Exception;
 
-    RestFulBean<Map> downExcel(Page<Users> page)throws WriteException, IOException;
-
     RestFulBean<Map> getCountList(Page<Users> page)throws Exception;
-
-    RestFulBean<Map> downExcelCount(Page<Users> page)throws WriteException, IOException;
 
     List<Users> getAllStudentsList();
 

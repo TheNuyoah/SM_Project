@@ -22,26 +22,16 @@ public class PaymentController {
      */
     @Autowired
     private PaymentService paymentService;
-    
-     /**
+
+    /**
      * 分页查询
      *
-     * @param  //前端传来的参数
+     * @param //前端传来的参数
      * @return
      */
-   @PostMapping("/get/page/list")
-    public RestFulBean<Map> getList(@RequestBody Page<Payment> page) throws Exception{
+    @PostMapping("/get/page/list")
+    public RestFulBean<Map> getList(@RequestBody Page<Payment> page) throws Exception {
         return this.paymentService.getList(page);
-    }
-    /**
-     * 学费统计
-     *
-     * @param  //前端传来的参数
-     * @return
-     */
-    @PostMapping("/get/page/total/list")
-    public RestFulBean<Map> getTotalList(@RequestBody Page<Payment>page) throws Exception{
-        return this.paymentService.getTotalList(page);
     }
     /**
      * 通过主键查询单条数据
@@ -49,8 +39,8 @@ public class PaymentController {
      * @param payment 主键
      * @return 单条数据
      */
-   @PostMapping("/get/by/id")
-    public RestFulBean<Payment> queryById(@RequestBody Payment payment) throws WriteException, IOException{
+    @PostMapping("/get/by/id")
+    public RestFulBean<Payment> queryById(@RequestBody Payment payment) throws WriteException, IOException {
         return this.paymentService.queryById(payment.getId());
     }
 
@@ -82,24 +72,8 @@ public class PaymentController {
      * @param payment
      * @return 删除是否成功
      */
-   @PostMapping("/delete")
+    @PostMapping("/delete")
     public RestFulBean<String> deleteById(@RequestBody Payment payment) {
         return this.paymentService.deleteById(payment.getId());
     }
-    /**
-     * 通过用户id查询缴费情况
-     *
-     * @param payment
-     * @return 单条数据
-     */
-    @PostMapping("/get/by/userId")
-    public RestFulBean<List<Payment>> queryByUserId(@RequestBody Payment payment) {
-        return this.paymentService.queryByUserId(payment.getUserId());
-    }
-    //缴费
-    @PostMapping("/pay")
-    public RestFulBean<String> pay(@RequestBody Payment payment) {
-        return this.paymentService.pay(payment);
-    }
 }
-

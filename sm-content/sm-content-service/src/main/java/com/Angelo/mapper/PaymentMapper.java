@@ -37,7 +37,6 @@ public interface PaymentMapper {
      */
     Integer getPageListCount(@Param("page") Page<Payment> page);
 
-
     /**
      * 新增数据
      *
@@ -45,9 +44,6 @@ public interface PaymentMapper {
      * @return 影响行数
      */
     int insert(Payment payment);
-
-
-
 
     /**
      * 修改数据
@@ -64,19 +60,5 @@ public interface PaymentMapper {
      * @return 影响行数
      */
     int deleteById(Integer id);
-
-    List<Payment> queryByUserId(Integer userId);
-
-    void pay(Payment payment);
-
-    List<Payment> getTotalListByCondition(@Param("page") Page<Payment> page);
-
-    Integer getTotalListCount(@Param("page")Page<Payment> page);
-
-    List<Payment> getTotalFee(Payment payment);
-
-    List<Payment> getHavedTotalFee(Payment payment);
-
-    List<Payment> getUnhavedTotalFee(Payment payment);
 }
 

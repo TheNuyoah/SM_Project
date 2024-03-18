@@ -70,7 +70,7 @@ public class ScoreController {
     /**
      * 删除数据
      *
-     * @param id 主键
+     * @param score
      * @return 删除是否成功
      */
    @PostMapping("/delete")

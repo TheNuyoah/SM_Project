@@ -50,24 +50,6 @@ public class UsersController {
     public RestFulBean<Map> getAbsenteeCountList(@RequestBody Page<Users> page) throws Exception {
         return usersService.getAbsenteeCountList(page);
     }
-    /**
-     *  打印学年注册名单excel
-     * @param
-     * @return Map
-     */
-    @PostMapping("/downExcel")
-    public RestFulBean<Map> downExcel(@RequestBody Page<Users> page) throws WriteException, IOException {
-        return usersService.downExcel(page);
-    }
-    /**
-     *  打印学年注册统计excel
-     * @param
-     * @return Map
-     */
-    @PostMapping("/downExcel/count")
-    public RestFulBean<Map> downExcelCount(@RequestBody Page<Users> page) throws WriteException, IOException {
-        return usersService.downExcelCount(page);
-    }
     //新增
     @PostMapping("/add")
     public RestFulBean<String> add(@RequestBody Users users) throws Exception {

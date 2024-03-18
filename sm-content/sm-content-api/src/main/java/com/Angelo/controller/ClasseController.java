@@ -78,7 +78,7 @@ public class ClasseController {
     /**
      * 删除数据
      *
-     * @param id 主键
+     * @param classe
      * @return 删除是否成功
      */
    @PostMapping("/delete")
